@@ -1,0 +1,80 @@
+#Rock paper scissors#
+import random
+
+print("Welcome to Rock Paper Scissors")
+print()
+
+wins = 0
+loss = 0
+ 
+def winloss():
+
+  print("Wins: %d" %wins)
+  print("Losses: %d" %loss)
+  newgame()
+
+def rps():
+
+  global wins
+  global Losses
+
+  Game = ['rock', 'scissors', 'paper']
+
+  num = str(input("rock paper or scissors"))
+  comp = random.choice(Game)
+  print("Computer picks %s" %comp)
+  print()
+
+  if num == comp:
+    print("Tie")
+    newgame()
+  
+  if num == "rock" and comp == "scissors":
+    print("Rock beats scissors")
+    print("You win")
+    wins += 1
+    newgame()
+
+  if num == "rock" and comp == "paper":
+    print("Rock beats paper")
+    print("You Win")
+    wins += 1
+    newgame()
+
+  if num == "scissors" and comp == "rock":
+    print("rock beats scissors")
+    print("You lose")
+    loss += 1
+    newgame()
+
+  if num == "scissors" and comp == "paper":
+    print("Scissors beats paper")
+    print(" You win!")
+    wins += 1
+    newgame()
+
+  if num == "paper" and comp == "rock":
+    print("Rock beats paper")
+    print("You lose")
+    wins -= 1
+    newgame()
+
+  if num == "paper" and comp == "scissors":
+    print("Scissors beats paper")
+    print("You win!")
+    wins += 1
+    newgame()
+
+def newgame():
+  stats = str(input("Display Stats? (Y/N)"))
+  if stats == "Y" or stats == "y":
+    winloss()
+  if stats == "N" or stats == "n":
+    newg = str(input("Play Again? (Y/N)"))
+  if newg == "Y" or newg == "y":
+    rps()
+  if newg == "N" or newg == "n":
+    print("Game Over")
+
+newgame()
+rps()
