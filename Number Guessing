@@ -1,0 +1,23 @@
+import random
+print("exit game by typing in exit")
+
+def numbercheck():
+  num = int(input("Enter a number: "))
+  check = random.randint(1,9)
+  
+  while 1:
+    if num == check:
+      print(num,"is the same as %s" %check)
+    elif num > check:
+      print(num,"Is higher than %s" %check)
+    elif num < check:
+      print(num,"Is smaller than %s" %check)
+  
+    playagain = input("Would you like to play again?: (Y/N)")
+    if playagain == "N":
+      print("Game Over")
+      break
+    elif playagain == "Y":
+      numbercheck()
+
+numbercheck()
